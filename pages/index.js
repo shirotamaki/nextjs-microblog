@@ -4,7 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import utilStyle from "../styles/utils.module.css";
+import utilStyles from "../styles/utils.module.css";
 import { getPostsData } from "@/lib/post";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,12 +33,12 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <Layout>
-      <section className={utilStyle.headingMd}>
+      <section className={utilStyles.headingMd}>
         <p>
           フィヨルドブートキャンプ/フィヨルドブートキャンプ/フィヨルドブートキャンプ
         </p>
       </section>
-      <section className={utilStyle.headingMd}>
+      <section className={utilStyles.headingMd}>
         <h2>📝プログラマー日記</h2>
         <div className={styles.grid}>
           {allPostsData.map(({ id, title, date, thumbnail }) => (
@@ -47,10 +47,10 @@ export default function Home({ allPostsData }) {
                 <img src={`${thumbnail}`} className={styles.thumbnailImage} />
               </Link>
               <Link href={`/posts/${id}`} legacyBehavior>
-                <a className={utilStyle.boldText}>タイトルだよ</a>
+                <a className={utilStyles.boldText}>タイトルだよ</a>
               </Link>
               <br />
-              <samll className={utilStyle.lightText}>2023年2月1日</samll>
+              <samll className={utilStyles.lightText}>2023年2月1日</samll>
             </article>
           ))}
         </div>
