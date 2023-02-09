@@ -5,72 +5,45 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import utilStyle from "../styles/utils.module.css";
+import { getPostsData } from "@/lib/post";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+//SSGの場合
+export async function getStaticProps() {
+  const allPostsData = getPostsData();
+  console.log(allPostsData);
+
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout>
       <section className={utilStyle.headingMd}>
         <p>
-          フィヨルドブートキャンプ　フィヨルドブートキャンプ　フィヨルドブートキャンプ
+          フィヨルドブートキャンプ/フィヨルドブートキャンプ/フィヨルドブートキャンプ
         </p>
       </section>
       <section className={utilStyle.headingMd}>
         <h2>📝プログラマー日記</h2>
         <div className={styles.grid}>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="/" legacyBehavior>
-              <a className={utilStyle.boldText}>タイトルだよ</a>
-            </Link>
-            <br />
-            <samll className={utilStyle.lightText}>2023年2月1日</samll>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail02.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="/" legacyBehavior>
-              <a className={utilStyle.boldText}>タイトルだよ</a>
-            </Link>
-            <br />
-            <samll className={utilStyle.lightText}>2023年2月1日</samll>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail03.jpeg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="/" legacyBehavior>
-              <a className={utilStyle.boldText}>タイトルだよ</a>
-            </Link>
-            <br />
-            <samll className={utilStyle.lightText}>2023年2月1日</samll>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail04.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="/" legacyBehavior>
-              <a className={utilStyle.boldText}>タイトルだよ</a>
-            </Link>
-            <br />
-            <samll className={utilStyle.lightText}>2023年2月1日</samll>
-          </article>
+          {allPostsData.map(({ id, title, date, thumbnail }) => (
+            <article key={id}>
+              <Link href={`/posts/${id}`}>
+                <img src={`${thumbnail}`} className={styles.thumbnailImage} />
+              </Link>
+              <Link href={`/posts/${id}`} legacyBehavior>
+                <a className={utilStyle.boldText}>タイトルだよ</a>
+              </Link>
+              <br />
+              <samll className={utilStyle.lightText}>2023年2月1日</samll>
+            </article>
+          ))}
         </div>
       </section>
     </Layout>
