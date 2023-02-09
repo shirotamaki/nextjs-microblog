@@ -12,11 +12,12 @@ export default function Home() {
   return (
     <Layout>
       <section className={utilStyle.headingMd}>
-        <p>わん、わん、わ、わーーーん</p>
+        <p>
+          フィヨルドブートキャンプ　フィヨルドブートキャンプ　フィヨルドブートキャンプ
+        </p>
       </section>
-
       <section className={utilStyle.headingMd}>
-        <h2>📝メモタイトル</h2>
+        <h2>📝プログラマー日記</h2>
         <div className={styles.grid}>
           <article>
             <Link href="/">
@@ -34,7 +35,7 @@ export default function Home() {
           <article>
             <Link href="/">
               <img
-                src="/images/thumbnail01.jpg"
+                src="/images/thumbnail02.jpg"
                 className={styles.thumbnailImage}
               />
             </Link>
@@ -47,7 +48,7 @@ export default function Home() {
           <article>
             <Link href="/">
               <img
-                src="/images/thumbnail01.jpg"
+                src="/images/thumbnail03.jpeg"
                 className={styles.thumbnailImage}
               />
             </Link>
@@ -60,7 +61,7 @@ export default function Home() {
           <article>
             <Link href="/">
               <img
-                src="/images/thumbnail01.jpg"
+                src="/images/thumbnail04.jpg"
                 className={styles.thumbnailImage}
               />
             </Link>

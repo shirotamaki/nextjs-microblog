@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css"
 import utilStyles from "../styles/utils.module.css"
 
-const name = "Tamaki Code";
+const name = "フィヨルドブートキャンプ・ブログ";
 export const siteTitle = "Next.js blog";
 
 function Layout({ children }) {
