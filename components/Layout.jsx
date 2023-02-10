@@ -3,7 +3,7 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "フィヨルドブートキャンプ・ブログ";
+const name = "Tamaki Code";
 export const siteTitle = "Next.js blog";
 
 function Layout({ children, home }) {
@@ -16,7 +16,7 @@ function Layout({ children, home }) {
         {home ? (
           <>
             <img
-              src="/images/profile.png"
+              src="/images/profile.jpeg"
               className={`${utilStyles.borderCircle} ${styles.headerHomeImage}`}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -24,7 +24,7 @@ function Layout({ children, home }) {
         ) : (
           <>
             <img
-              src="/images/profile.png"
+              src="/images/profile.jpeg"
               className={`${utilStyles.borderCircle} `}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
