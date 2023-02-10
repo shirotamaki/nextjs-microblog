@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -25,7 +27,7 @@ function Layout({ children, home }) {
           <>
             <img
               src="/images/profile.jpeg"
-              className={`${utilStyles.borderCircle} `}
+              className={`${utilStyles.borderCircle} ${styles.headerHomeImage}`}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
