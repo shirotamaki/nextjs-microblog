@@ -40,11 +40,12 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          フィヨルドブートキャンプ/フィヨルドブートキャンプ/フィヨルドブートキャンプ
+          Next.jsのチュートリアル Next.jsのチュートリアル Next.jsのチュートリアル
         </p>
       </section>
       <section className={utilStyles.headingMd}>
         <h2>📝プログラマー日記</h2>
+        <br />
         <div className={styles.grid}>
           {allPostsData.map(({ id, title, date, thumbnail }) => (
             <article key={id}>
@@ -55,7 +56,7 @@ export default function Home({ allPostsData }) {
                 <a className={utilStyles.boldText}>{`${title}`}</a>
               </Link>
               <br />
-              <samll className={utilStyles.lightText}>{`${date}` }</samll>
+              <samll className={utilStyles.lightText}>{`${date}`}</samll>
             </article>
           ))}
         </div>
